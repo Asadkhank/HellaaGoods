@@ -65,6 +65,9 @@ const Navbar = () => {
   };
 
   const isHomePage = location.pathname === "/";
+  const isRestaurantPage = location.pathname === "/restaurant";
+  const isAboutPage = location.pathname === "/about"; // Check if on About page
+
   const navbarClasses = `${isHomePage ? (isMenuOpen ? "bg-white" : "bg-transparent") : "bg-white"} ${
     isVisible ? "top-0" : "-top-full"
   } fixed w-full p-4 transition-transform duration-300 z-40`; // Increased z-index for Navbar
@@ -135,6 +138,36 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+
+      {/* Conditionally apply wave effect on Restaurant and About pages */}
+      {(isRestaurantPage || isAboutPage) && (
+        <>
+          <div
+            style={{
+              position: "absolute",
+              bottom: -13, // Position wave at the bottom of the navbar
+              left: 0,
+              right: 0,
+              height: "15px", // Height of the wave
+              backgroundRepeat: "repeat-x",
+              backgroundSize: "20px 20px",
+              backgroundImage: "radial-gradient(circle at 10px 15px, transparent 12px, white 12px)", // Red wave effect
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "-15px", // Position the second wave slightly lower
+              left: 0,
+              right: 0,
+              height: "15px", // Height of the second wave
+              backgroundRepeat: "repeat-x",
+              backgroundSize: "40px 20px",
+              backgroundImage: "radial-gradient(circle at 10px 0, white 12px, transparent 12px)", // Red wave effect
+            }}
+          />
+        </>
+      )}
 
       {/* Search Box within Navbar */}
       {showSearchBox && (

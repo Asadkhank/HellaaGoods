@@ -9,7 +9,35 @@ const App = () => {
   const [hoveredCard, setHoveredCard] = useState(null); // State to manage which card is hovered
 
   return (
-    <section className="min-h-screen bg-green-500 text-center py-16">
+    <section className="min-h-screen relative bg-[green] lg:mt-24 mt-16 text-center py-16">
+        <div
+          style={{
+            position: "absolute",
+            top: -13, // Position wave at the top of the section
+            left: 0,
+            right: 0,
+            height: "15px", // Height of the wave
+            backgroundRepeat: "repeat-x",
+            backgroundSize: "20px 20px",
+            backgroundImage:
+              "radial-gradient(circle at 10px 15px, transparent 12px, green 12px)", // Lime color wave effect
+            transform: "rotate(180deg)", // Rotates the wave 180 degrees
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: "-15px", // Position the second wave slightly lower at the top
+            left: 0,
+            right: 0,
+            height: "15px", // Height of the second wave
+            backgroundRepeat: "repeat-x",
+            backgroundSize: "40px 20px",
+            backgroundImage:
+              "radial-gradient(circle at 10px 0, green 12px, transparent 12px)", // Lime color wave effect
+            transform: "rotate(180deg)", // Rotates the second wave 180 degrees
+          }}
+        />
       {/* Title Section */}
       <h1 className="text-5xl font-bold text-black">HELLA GOOD MERCH</h1>
       <p className="text-black mt-2">Fresh fits for fresh food.</p>

@@ -36,8 +36,37 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-lime-500">
-      <div className="text-center px-4 md:px-20 max-w-4xl">
+    <div className="relative flex items-center justify-center min-h-screen bg-[limegreen]">
+       {/* Rotated Wave Effect at the top */}
+       <div
+        style={{
+          position: "absolute",
+          top: -13, // Position wave at the top of the section
+          left: 0,
+          right: 0,
+          height: "15px", // Height of the wave
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "20px 20px",
+          backgroundImage:
+            "radial-gradient(circle at 10px 15px, transparent 12px, limegreen 12px)", // Lime color wave effect
+          transform: "rotate(180deg)", // Rotates the wave 180 degrees
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          top: "-15px", // Position the second wave slightly lower at the top
+          left: 0,
+          right: 0,
+          height: "15px", // Height of the second wave
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "40px 20px",
+          backgroundImage:
+            "radial-gradient(circle at 10px 0, limegreen 12px, transparent 12px)", // Lime color wave effect
+          transform: "rotate(180deg)", // Rotates the second wave 180 degrees
+        }}
+      />
+      <div className="text-center px-4 md:px-20 py-12 mb-12 max-w-4xl">
         <h2 className="text-lg md:text-2xl font-bold text-black mb-4">
           WORD ON THE STREET
         </h2>
@@ -57,9 +86,9 @@ const TestimonialSlider = () => {
         <button
           onClick={prevTestimonial}
           className="bg-white p-2 rounded-full text-black text-2xl transform transition-all duration-300 hover:translate-y-2 shadow-lg"
-          style={{ 
-            boxShadow: '4px 4px 0px 0px rgba(0, 0, 0, 1)', 
-            transition: 'box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out' 
+          style={{
+            boxShadow: '4px 4px 0px 0px rgba(0, 0, 0, 1)',
+            transition: 'box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out',
           }}
           onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'none'}
           onMouseLeave={(e) => e.currentTarget.style.boxShadow = '4px 4px 0px 0px rgba(0, 0, 0, 1)'}
@@ -69,9 +98,9 @@ const TestimonialSlider = () => {
         <button
           onClick={nextTestimonial}
           className="bg-white p-2 rounded-full text-black text-2xl transform transition-all duration-300 hover:translate-y-2 shadow-lg"
-          style={{ 
-            boxShadow: '4px 4px 0px 0px rgba(0, 0, 0, 1)', 
-            transition: 'box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out' 
+          style={{
+            boxShadow: '4px 4px 0px 0px rgba(0, 0, 0, 1)',
+            transition: 'box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out',
           }}
           onMouseEnter={(e) => e.currentTarget.style.boxShadow = 'none'}
           onMouseLeave={(e) => e.currentTarget.style.boxShadow = '4px 4px 0px 0px rgba(0, 0, 0, 1)'}
@@ -79,6 +108,34 @@ const TestimonialSlider = () => {
           &#8594;
         </button>
       </div>
+ {/* Wave effect as a bottom border with the same red color as section */}
+ <div
+        style={{
+          position: "absolute",
+          bottom: -13, // Position wave at the bottom of the red section
+          left: 0,
+          right: 0,
+          height: "15px", // Height of the wave
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "20px 20px",
+          backgroundImage:
+            "radial-gradient(circle at 10px 15px, transparent 12px, limeGreen 12px)", // Red wave effect
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-15px", // Position the second wave slightly lower
+          left: 0,
+          right: 0,
+          height: "15px", // Height of the second wave
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "40px 20px",
+          backgroundImage:
+            "radial-gradient(circle at 10px 0, limeGreen 12px, transparent 12px)", // Red wave effect
+        }}
+      />
+     
     </div>
   );
 };
